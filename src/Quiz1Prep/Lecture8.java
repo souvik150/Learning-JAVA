@@ -28,8 +28,9 @@ public class Lecture8 {
             System.out.println(name1.equals(name2));
         }
 
-        String name3="souvik";
-        String name4="Souvik";
+        String name3="Zouvik";
+        String name4="zouvik";
+        System.out.println("compareTo");
         System.out.println(name3.compareTo(name4));
 
 

@@ -18,14 +18,6 @@ class Student{
         System.out.println(name);
         System.out.println(city);
     }
-
-    public void velloreCity(){
-        if(city.equals("Vellore")){
-            System.out.println(name);
-        }
-    }
-
-
 }
 
 public class Lecture9 {
@@ -37,15 +29,15 @@ public class Lecture9 {
             s[i] = new Student();
         }
 
-        for(int i = 0; i<s.length;i++){
+        for (Student student : s) {
             String a = input.next();
             String b = input.next();
             String c = input.next();
-            s[i].setData(a, b, c);
+            student.setData(a, b, c);
         }
 
-        for(int i = 0; i<s.length;i++){
-            s[i].getData();
+        for (Student student : s) {
+            student.getData();
         }
 
         System.out.println("Hello World!");
@@ -54,23 +46,30 @@ public class Lecture9 {
 //            s[i].velloreCity();
 //        }
 
+        velloreCity(s);
         sort(s);
 
     }
+
+    public static void velloreCity(Student[] k){
+        Student temp = new Student();
+        for (Student student : k) {
+            if (student.city.equals("Vellore")) {
+                System.out.println(student.name + " is from Vellore");
+            }
+        }
+    }
+
     public static void sort(Student[] k){
         Student temp = new Student();
         for(int i = 0; i<k.length-1; i++){
-            for(int j =0; j<k.length-1-i; j++){
+            for(int j =1; j<k.length-1-i; j++){
                 if(k[j].name.compareTo(k[j+1].name)>0){
                     temp = k[j];
                     k[j] = k[j+1];
                     k[j+1] = temp;
                 }
             }
-        }
-
-        for(Student m:k){
-            m.getData();
         }
     }
 }
