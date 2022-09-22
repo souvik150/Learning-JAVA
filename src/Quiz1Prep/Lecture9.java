@@ -1,5 +1,4 @@
 package Quiz1Prep;
-
 import java.util.*;
 
 class Student{
@@ -61,15 +60,50 @@ public class Lecture9 {
     }
 
     public static void sort(Student[] k){
-        Student temp = new Student();
-        for(int i = 0; i<k.length-1; i++){
-            for(int j =1; j<k.length-1-i; j++){
-                if(k[j].name.compareTo(k[j+1].name)>0){
-                    temp = k[j];
-                    k[j] = k[j+1];
-                    k[j+1] = temp;
-                }
-            }
+        ArrayList<String> t = new ArrayList<String>();
+
+        for (Student student : k) {
+            t.add(student.name);
+        }
+
+        Collections.sort(t);
+        System.out.println(t);
+
+        String[] array = t.toArray(new String[0]);
+
+        for(String i:array){
+           System.out.print(i+" ");
         }
     }
 }
+
+/*
+        String[] countries = {"Zimbabwe", "South-Africa", "India", "America", "Yugoslavia", " Australia", "Denmark", "France", "Netherlands", "Italy", "Germany"};
+        int size = countries.length;
+        for(int i = 0; i<size-1; i++)
+        {
+            for (int j = i+1; j<countries.length; j++)
+            {
+                if(countries[i].compareTo(countries[j])>0)
+                {
+                    String temp = countries[i];
+                    countries[i] = countries[j];
+                    countries[j] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(countries));
+    }
+}
+
+ */
+
+//21
+//Souvik
+//Vellore
+//24
+//Jane
+//Hyderabad
+//26
+//John
+//Vellore
